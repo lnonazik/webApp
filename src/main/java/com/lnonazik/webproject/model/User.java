@@ -24,6 +24,9 @@ public class User implements UserDetails {
     private String phone;
     private String profilePicture;
 
+    @OneToMany(mappedBy = "user")
+    private List<Track> trackList;
+
     @ElementCollection(targetClass = Role.class)
     @JoinTable(
             name = "user_roles",
@@ -38,6 +41,14 @@ public class User implements UserDetails {
 
     public List<Role> getRoles() {
         return roles;
+    }
+
+    public List<Track> getTrackList() {
+        return trackList;
+    }
+
+    public void setTrackList(List<Track> trackList) {
+        this.trackList = trackList;
     }
 
     public void setRoles(List<Role> roles) {

@@ -51,6 +51,11 @@ public class MainController {
         return "home";
     }
 
+    @GetMapping("/track")
+    public String track(){
+        return "newTrack";
+    }
+
     @GetMapping("/product")
     public String product(Model model) {
         model.addAttribute("product", new ProductDto());

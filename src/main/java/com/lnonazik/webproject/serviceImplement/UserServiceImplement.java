@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,7 +61,7 @@ public class UserServiceImplement implements UserService {
         user.setEmail(u.getEmail());
         user.setUsername(u.getUsername());
         user.setPassword(passwordEncoder.encode(u.getPassword()));
-        user.setRoles(List.of(Role.ROLE_USER));
+        user.setRoles(Arrays.asList(Role.ROLE_USER));
         userRepository.save(user);
         return user;
     }

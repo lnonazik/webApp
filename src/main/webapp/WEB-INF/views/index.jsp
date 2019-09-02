@@ -4,9 +4,10 @@
 <html>
 <head>
     <title>Index</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Welcome</h1>
+<h1 id="pp">Welcome</h1>
 <sec:authorize access="isAuthenticated()">
     <div>
         <table border="2" width="70%" cellpadding="2">
@@ -67,5 +68,6 @@
         <a href="${pageContext.request.contextPath}/registration">Don't have an account yet?</a>
     </div>
 </sec:authorize>
+<p id="pp">dsffdsf</p>
 </body>
 </html>
