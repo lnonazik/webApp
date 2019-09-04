@@ -5,6 +5,7 @@
 <head>
     <title>Index</title>
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
 <h1 id="pp">Welcome</h1>
@@ -62,12 +63,11 @@
 </sec:authorize>
 <sec:authorize access="isAnonymous()">
     <div>
-        <a href="${pageContext.request.contextPath}/login">Log In with existing account</a>
+        <a href="${pageContext.request.contextPath}/login">Log In </a>
     </div>
     <div>
-        <a href="${pageContext.request.contextPath}/registration">Don't have an account yet?</a>
+        <a href="${pageContext.request.contextPath}/registration">Registration</a>
     </div>
 </sec:authorize>
-<p id="pp">dsffdsf</p>
 </body>
 </html>
