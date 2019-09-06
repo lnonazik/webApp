@@ -2,6 +2,7 @@ package com.lnonazik.webproject.controller;
 
 
 import com.lnonazik.webproject.dto.ProductDto;
+import com.lnonazik.webproject.dto.TrackDTO;
 import com.lnonazik.webproject.service.ProductService;
 import com.lnonazik.webproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -70,6 +69,12 @@ public class MainController {
         }
         productService.saveNewProduct(product);
         return "redirect:/product";
+    }
+
+    @GetMapping("/upload")
+    public String upload(Model model) {
+        model.addAttribute("track", new TrackDTO());
+        return "upload";
     }
 
 

@@ -1,5 +1,6 @@
 package com.lnonazik.webproject.serviceImplement;
 
+import com.lnonazik.webproject.dto.TrackDTO;
 import com.lnonazik.webproject.model.Track;
 import com.lnonazik.webproject.repository.TrackResository;
 import com.lnonazik.webproject.service.TrackService;
@@ -21,5 +22,20 @@ public class TrackServiceImplement implements TrackService {
     @Override
     public List<Track> findAllTracks() {
         return trackResository.findAll();
+    }
+
+    @Override
+    public void saveNewProduct(TrackDTO trackDTO) {
+
+    }
+
+    @Override
+    public void delete(Long id) {
+
+    }
+
+    @Override
+    public void delete(String track) {
+
     }
 }

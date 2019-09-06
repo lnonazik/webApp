@@ -12,5 +12,7 @@
 <sec:authorize access='hasRole("ROLE_ADMIN")'>
     <a href="${pageContext.request.contextPath}/admin/">Admin page</a>
 </sec:authorize>
+
+<a href="/upload">Upload</a>
 </body>
 </html>

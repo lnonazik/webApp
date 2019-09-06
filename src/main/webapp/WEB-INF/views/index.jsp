@@ -68,6 +68,9 @@
     <div>
         <a href="${pageContext.request.contextPath}/registration">Registration</a>
     </div>
+    <div>
+        <a href="/upload">Upload</a>
+    </div>
 </sec:authorize>
 </body>
 </html>
