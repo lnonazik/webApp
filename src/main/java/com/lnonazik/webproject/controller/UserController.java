@@ -3,6 +3,7 @@ package com.lnonazik.webproject.controller;
 
 import com.lnonazik.webproject.dto.UserDTO;
 import com.lnonazik.webproject.model.User;
+import com.lnonazik.webproject.service.TrackService;
 import com.lnonazik.webproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.security.Principal;
 
 @Controller
 public class UserController {
@@ -24,6 +26,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private TrackService trackService;
+
+    @GetMapping("/tracks")
+    public String tracks(Model model, Principal principal){
+        model.addAttribute("tracks", trackService.findAllTracksByUser(userService.findOne(principal.getName()).get()));
+        return "upload";
+    }
 
     @GetMapping("/registration")
     public String registration(Model model){

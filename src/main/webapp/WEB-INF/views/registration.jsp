@@ -4,6 +4,7 @@
 <head>
     <title>Registration</title>
     <script src="js/jquery-3.4.1.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <h1>Registration Form</h1>

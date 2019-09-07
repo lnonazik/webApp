@@ -4,6 +4,7 @@ package com.lnonazik.webproject.controller;
 import com.lnonazik.webproject.dto.ProductDto;
 import com.lnonazik.webproject.dto.TrackDTO;
 import com.lnonazik.webproject.service.ProductService;
+import com.lnonazik.webproject.service.TrackService;
 import com.lnonazik.webproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -24,12 +25,15 @@ public class MainController {
 
     private final UserService userService;
 
+    private final TrackService trackService;
+
     private int total = 5;
 
     @Autowired
-    public MainController(ProductService productService, UserService userService) {
+    public MainController(ProductService productService, UserService userService, TrackService trackService) {
         this.productService = productService;
         this.userService = userService;
+        this.trackService = trackService;
     }
 
     @GetMapping({"/", "/index"})
@@ -72,8 +76,9 @@ public class MainController {
     }
 
     @GetMapping("/upload")
-    public String upload(Model model) {
+    public String upload(Model model, Principal principal) {
         model.addAttribute("track", new TrackDTO());
+        model.addAttribute("trackList", trackService.findAllTracksByUser(userService.findOne(principal.getName()).get()));
         return "upload";
     }
 

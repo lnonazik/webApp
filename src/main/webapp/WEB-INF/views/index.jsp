@@ -8,7 +8,8 @@
 
 </head>
 <body>
-<h1 id="pp">Welcome</h1>
+
+<center><h1 id="pp">Welcome</h1></center>
 <sec:authorize access="isAuthenticated()">
     <div>
         <table border="2" width="70%" cellpadding="2">
@@ -35,7 +36,7 @@
                 </tr>
             </c:forEach>
         </table>
-        <div>
+        <div id="index_div">
             <a href="${pageContext.request.contextPath}/index?page=1&sort=${param.get("sort")}">1</a>
             <a href="${pageContext.request.contextPath}/index?page=2&sort=${param.get("sort")}">2</a>
             <a href="${pageContext.request.contextPath}/index?page=3&sort=${param.get("sort")}">3</a>
@@ -61,16 +62,51 @@
         </div>
     </div>
 </sec:authorize>
-<sec:authorize access="isAnonymous()">
-    <div>
+<sec:authorize access="isAnonymous()" >
+
+    <!--
+    <div id="index_div" align="center">
         <a href="${pageContext.request.contextPath}/login">Log In </a>
     </div>
-    <div>
+    <div id="index_div" align="center">
         <a href="${pageContext.request.contextPath}/registration">Registration</a>
     </div>
-    <div>
+    <div id="index_div" align="center">
         <a href="/upload">Upload</a>
     </div>
+    -->
+
+    <div>
+        <table id="index_table" align="center">
+            <tr>
+                <td>
+                    <p id="in_log">
+                    <a href="${pageContext.request.contextPath}/login">
+                    <img src="/img/login_index.png" width="242" height="42">
+                    </a></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="in_reg">
+                        <a href="${pageContext.request.contextPath}/registration">
+                            <img src="/img/reg_index.png" width="242" height="42">
+                        </a>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
 </sec:authorize>
+
 </body>
 </html>

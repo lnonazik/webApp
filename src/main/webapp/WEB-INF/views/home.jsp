@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Home</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <h1>Welcome back, ${username}!</h1>

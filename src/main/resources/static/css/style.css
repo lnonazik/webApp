@@ -2,6 +2,57 @@ body{
     background-image: url("/img/bg.png")
 
 }
-#pp{
+
+A{
     color: red;
+}
+#pp{
+    color: brown;
+
+}
+
+#index_div{
+    align:center;
+    font-family: Verdana;
+
+}
+
+#index_table{
+    background-image: url("/img/notepad.png");
+    font-family: Verdana;
+    border: 0px;
+    solid-color: black;
+    width: 378px;
+    height: 430px;
+}
+
+#in_log{
+    margin-left: 70px;
+    margin-top: 95px;
+}
+#in_reg{
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+#log_label{
+    margin-left: 95px;
+    margin-top: 45px;
+}
+#pas_label{
+    margin-left: 95px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#but_log{
+    margin-left: 55px;
+    margin-right: 50px;
+    margin-top: 2px;
+}
+
+#firs_time{
+    margin-left: 130px;
+    margin-top: 4px;
+
 }

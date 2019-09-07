@@ -2,6 +2,7 @@ package com.lnonazik.webproject.serviceImplement;
 
 import com.lnonazik.webproject.dto.TrackDTO;
 import com.lnonazik.webproject.model.Track;
+import com.lnonazik.webproject.model.User;
 import com.lnonazik.webproject.repository.TrackResository;
 import com.lnonazik.webproject.service.TrackService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,20 @@ public class TrackServiceImplement implements TrackService {
     }
 
     @Override
-    public void saveNewProduct(TrackDTO trackDTO) {
+    public Track saveNewProduct(TrackDTO trackDTO) {
+        Track track = new Track();
 
+        track.setName(trackDTO.getName());
+        track.setPerformer(trackDTO.getPerformer());
+        track.setAlbum(trackDTO.getAlbum());
+        track.setPath(trackDTO.getPath());
+        trackResository.save(track);
+        return track;
+    }
+
+    @Override
+    public void saveTrack(Track track) {
+        trackResository.save(track);
     }
 
     @Override
@@ -37,5 +50,10 @@ public class TrackServiceImplement implements TrackService {
     @Override
     public void delete(String track) {
 
+    }
+
+    @Override
+    public List<Track> findAllTracksByUser(User user) {
+        return trackResository.findAllByUser(user);
     }
 }

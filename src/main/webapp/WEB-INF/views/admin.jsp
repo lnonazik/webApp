@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Admin</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <sec:authorize access='hasRole("ROLE_ADMIN")'>
