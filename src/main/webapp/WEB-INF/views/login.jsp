@@ -5,7 +5,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<center><h1 id="pp">Login</h1></center>
+<center><h1 class="pp">Login</h1></center>
 
 <form action="${pageContext.request.contextPath}/performLogin" method="post">
     <span class="error">${message}</span>
@@ -17,7 +17,7 @@
 </form>
 
 <div align="center">
-    <a href="${pageContext.request.contextPath}/registration">First time?</a>
+    <a href="${pageContext.request.contextPath}/registration">Registration</a>
 </div>
 <div align="center">
     <a href="${pageContext.request.contextPath}/">Back</a>

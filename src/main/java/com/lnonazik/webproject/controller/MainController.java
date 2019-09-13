@@ -75,6 +75,11 @@ public class MainController {
         return "redirect:/product";
     }
 
+    @GetMapping("/contacts")
+    public String contact(){
+        return "contacts";
+    }
+
 
 
 

@@ -5,76 +5,29 @@
 <head>
     <title>Index</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
 
 </head>
 <body>
 
-<center><h1 id="pp">Welcome</h1></center>
+
 <sec:authorize access="isAuthenticated()">
-    <div>
-        <table border="2" width="70%" cellpadding="2">
-            <tr>
-                <th>
-                    <a href="${pageContext.request.contextPath}/index?page=${param.get("page")}&sort=productName">Name</a>
-                </th>
-                <th><a href="${pageContext.request.contextPath}/index?page=${param.get("page")}&sort=price">Price</a>
-                </th>
-                <th><a href="${pageContext.request.contextPath}/index?page=${param.get("page")}&sort=manufacturer">Manufacturer</a>
-                </th>
-                <th><a href="${pageContext.request.contextPath}/index?page=${param.get("page")}&sort=amount">Amount</a>
-                </th>
-                <th><a href="${pageContext.request.contextPath}/index?page=${param.get("page")}&sort=description">Description</a>
-                </th>
-            </tr>
-            <c:forEach var="p" items="${products}">
-                <tr>
-                    <td>${p.productName}</td>
-                    <td>${p.price}</td>
-                    <td>${p.manufacturer}</td>
-                    <td>${p.amount}</td>
-                    <td>${p.description}</td>
-                </tr>
-            </c:forEach>
-        </table>
-        <div id="index_div">
-            <a href="${pageContext.request.contextPath}/index?page=1&sort=${param.get("sort")}">1</a>
-            <a href="${pageContext.request.contextPath}/index?page=2&sort=${param.get("sort")}">2</a>
-            <a href="${pageContext.request.contextPath}/index?page=3&sort=${param.get("sort")}">3</a>
-            <a href="${pageContext.request.contextPath}/index?page=4&sort=${param.get("sort")}">4</a>
-            <a href="${pageContext.request.contextPath}/index?page=5&sort=${param.get("sort")}">5</a>
-            <div>
-                <form action="${pageContext.request.contextPath}/index?page=${param.get("page")}&sort=${param.get("sort")}">
-                    <input type="number" width="5px" name="total" id="total" min="3" max="20">
-                    <input type="submit" value="Ok">
-                </form>
-            </div>
-        </div>
-        <div>
-            <a href="${pageContext.request.contextPath}/home">Home</a>
-        </div>
-        <div class="logout">
-            Logged in user:
-            <div>
-                <form action="${pageContext.request.contextPath}/logout" method="post">
-                    <input type="submit" value="Logout">
-                </form>
-            </div>
-        </div>
+    <div align="center">
+    <nav class="three">
+        <ul>
+            <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
+            <li><a href="/upload">Repository</a></li>
+            <li><a href="/index">Blog</a></li>
+            <li><a href="/contacts">Contact</a></li>
+            <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
+        </ul>
+    </nav>
     </div>
+    <center><h1 class="pp">Welcome</h1></center>
+
+
 </sec:authorize>
 <sec:authorize access="isAnonymous()" >
-
-    <!--
-    <div id="index_div" align="center">
-        <a href="${pageContext.request.contextPath}/login">Log In </a>
-    </div>
-    <div id="index_div" align="center">
-        <a href="${pageContext.request.contextPath}/registration">Registration</a>
-    </div>
-    <div id="index_div" align="center">
-        <a href="/upload">Upload</a>
-    </div>
-    -->
 
     <div>
         <table id="index_table" align="center">

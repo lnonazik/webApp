@@ -4,9 +4,10 @@ body{
 }
 
 A{
-    color: red;
+    color: white;
+
 }
-#pp{
+.pp{
     color: brown;
 
 }
@@ -54,5 +55,14 @@ A{
 #firs_time{
     margin-left: 130px;
     margin-top: 4px;
+}
+#m_text{
+    background-color: #f6f6f6;
+    color: black;
+    margin-bottom: 3px;
+    width: 350px;
+}
 
+#reg_text{
+    margin: 5px;
 }

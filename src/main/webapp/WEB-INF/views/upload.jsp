@@ -12,14 +12,27 @@
 <head>
     <title>Upload</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
 </head>
 <body>
 <div align="center">
+    <nav class="three">
+        <ul>
+            <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
+            <li><a href="/upload">Repository</a></li>
+            <li><a href="/index">Blog</a></li>
+            <li><a href="/contacts">Contact</a></li>
+            <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
+        </ul>
+    </nav>
+
+
+
+
     <form method="post" action="/upload" enctype="multipart/form-data">
         <input type="file" name="file" />
         <input type="submit" value="Upload" />
         <br>
-        <a href="${pageContext.request.contextPath}/index">Back to index</a>
     </form>
 
     <div>
@@ -34,7 +47,12 @@
             <c:forEach items="${trackList}" var="tr">
             <li>
                 <div>
-                    <p>${tr.name}</p>
+                    <table id="m_text">
+                        <tr>
+                            <td><p>${tr.name}</p></td>
+                        </tr>
+                    </table>
+                    <!--<p>${tr.name}</p> -->
                 </div>
                 <audio controls>
                     <source src="${tr.path}" type="audio/ogg; codecs=vorbis">
