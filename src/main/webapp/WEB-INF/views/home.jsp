@@ -6,6 +6,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+<div align="center">
 <h1>Welcome back, ${username}!</h1>
 <a href="${pageContext.request.contextPath}/index">Back to index</a>
 <a href="${pageContext.request.contextPath}/product">Go to Product Page</a>
@@ -15,5 +16,6 @@
 </sec:authorize>
 
 <a href="/upload">Upload</a>
+</div>
 </body>
 </html>

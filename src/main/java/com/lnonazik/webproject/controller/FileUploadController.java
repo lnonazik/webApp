@@ -1,5 +1,6 @@
 package com.lnonazik.webproject.controller;
 
+import com.lnonazik.webproject.dto.TrackDTO;
 import com.lnonazik.webproject.model.Track;
 import com.lnonazik.webproject.service.StorageService;
 import com.lnonazik.webproject.service.TrackService;
@@ -49,6 +50,8 @@ public class FileUploadController {
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes, Principal principal){
         Track track = new Track();
+        // We have to retrieve/extract metadata information from audio file
+        track.setName(file.getOriginalFilename());
         track.setUser(userService.findOne(principal.getName()).get());
         track.setPath("http://localhost:90/files/"+file.getOriginalFilename());
         storageService.store(file);
@@ -56,6 +59,19 @@ public class FileUploadController {
                 "Your file "+file.getOriginalFilename()+" successfully uploaded!");
         trackService.saveTrack(track);
         return "redirect:/upload";
+    }
+
+    @PostMapping("/delete")
+    public String deleteTrack(@RequestParam("track_id") long track_id){
+        storageService.deleteTrackById(track_id);
+        return "redirect:/upload";
+    }
+
+    @GetMapping("/upload")
+    public String upload(Model model, Principal principal) {
+        model.addAttribute("track", new TrackDTO());
+        model.addAttribute("trackList", trackService.findAllTracksByUser(userService.findOne(principal.getName()).get()));
+        return "upload";
     }
 
     @ExceptionHandler(StorageFileNotFoundException.class)

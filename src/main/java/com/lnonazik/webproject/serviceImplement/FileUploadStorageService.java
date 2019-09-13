@@ -1,5 +1,7 @@
 package com.lnonazik.webproject.serviceImplement;
 
+import com.lnonazik.webproject.model.Track;
+import com.lnonazik.webproject.repository.TrackResository;
 import com.lnonazik.webproject.service.StorageService;
 import com.lnonazik.webproject.serviceImplement.storage.StorageException;
 import com.lnonazik.webproject.serviceImplement.storage.StorageFileNotFoundException;
@@ -18,6 +20,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 @Service
@@ -94,4 +97,14 @@ public class FileUploadStorageService implements StorageService {
     public void deleteAll() {
         FileSystemUtils.deleteRecursively(ROOT_LOCATION.toFile());
     }
+
+    @Autowired
+    private TrackResository trackResository;
+
+    @Override
+    public void deleteTrackById(long id){
+        Optional<Track> byId = trackResository.findById(id);
+        trackResository.delete(byId.get());
+    }
+
 }

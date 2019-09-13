@@ -14,27 +14,44 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<form method="post" action="/upload" enctype="multipart/form-data">
-    <input type="file" name="file" />
-    <input type="submit" value="Upload" />
-    <br>
-    <a href="${pageContext.request.contextPath}/index">Back to index</a>
-</form>
+<div align="center">
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload" />
+        <br>
+        <a href="${pageContext.request.contextPath}/index">Back to index</a>
+    </form>
+
+    <div>
+        <ul>
+            <c:forEach items="${files}" var="file">
+                <li><a href="${file}">${file}</a></li>
+            </c:forEach>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <c:forEach items="${trackList}" var="tr">
+            <li>
+                <div>
+                    <p>${tr.name}</p>
+                </div>
+                <audio controls>
+                    <source src="${tr.path}" type="audio/ogg; codecs=vorbis">
+                    <source src="${tr.path}" type="audio/mpeg">
+                    <a href="${tr.path}">Скачайте музыку</a>
+                </audio>
+                <div>
+                    <form method="post" action="/delete" />
+                        <input name="track_id" type="hidden" value="${tr.id}"/>
+                        <input type="submit" value="Delete" />
+                    </form>
+                </div>
+            </li>
+            </c:forEach>
+        </ul>
+    </div>
 </div>
-<div>
-    <ul>
-        <c:forEach items="${files}" var="file">
-            <li><a href="${file}">${file}</a></li>
-        </c:forEach>
-    </ul>
-</div>
-<c:forEach items="${trackList}" var="tr">
-    <audio controls>
-        <source src="${tr.path}" type="audio/ogg; codecs=vorbis">
-        <source src="${tr.path}" type="audio/mpeg">
-        <a href="${tr.path}">Скачайте музыку</a>
-    </audio>
-</c:forEach>
 
 </body>
 </html>

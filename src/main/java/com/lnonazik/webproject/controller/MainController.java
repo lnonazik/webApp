@@ -75,12 +75,7 @@ public class MainController {
         return "redirect:/product";
     }
 
-    @GetMapping("/upload")
-    public String upload(Model model, Principal principal) {
-        model.addAttribute("track", new TrackDTO());
-        model.addAttribute("trackList", trackService.findAllTracksByUser(userService.findOne(principal.getName()).get()));
-        return "upload";
-    }
+
 
 
 }

@@ -13,7 +13,9 @@ public class Track {
     private String album;
     private String path;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
+   /* @ManyToOne(cascade = CascadeType.REMOVE)*/
+
+    @ManyToOne
     private User user;
 
     public Track(){
