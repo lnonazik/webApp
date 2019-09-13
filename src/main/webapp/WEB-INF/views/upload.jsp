@@ -13,6 +13,7 @@
     <title>Upload</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
 <div align="center">
@@ -25,9 +26,6 @@
             <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
         </ul>
     </nav>
-
-
-
 
     <form method="post" action="/upload" enctype="multipart/form-data">
         <input type="file" name="file" />

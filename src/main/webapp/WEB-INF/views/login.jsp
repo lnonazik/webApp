@@ -3,6 +3,7 @@
 <head>
     <title>Login</title>
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
 <center><h1 class="pp">Login</h1></center>

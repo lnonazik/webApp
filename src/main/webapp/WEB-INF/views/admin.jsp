@@ -11,6 +11,7 @@
 <head>
     <title>Admin</title>
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
 <sec:authorize access='hasRole("ROLE_ADMIN")'>

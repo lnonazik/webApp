@@ -10,6 +10,7 @@
 <head>
     <title>Add Track</title>
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
 <h1> ADD Tracks </h1>

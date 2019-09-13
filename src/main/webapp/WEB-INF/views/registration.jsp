@@ -5,6 +5,7 @@
     <title>Registration</title>
     <script src="js/jquery-3.4.1.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
 <center>
