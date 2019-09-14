@@ -11,7 +11,7 @@ import java.security.Principal;
 @RequestMapping("admin")
 public class AdminController {
 
-    @GetMapping("/")
+    @GetMapping({"/" , "/admin}"})
     public String admin(Principal principal, Model model) {
         model.addAttribute("username", principal.getName());
         return "admin";

@@ -37,6 +37,7 @@
         </tr>
         <tr>
             <td>f13
+
             <div align="center">
                 <ul>
                 <c:forEach items="${allTrackList}" var="tr">
@@ -52,10 +53,6 @@
                 </c:forEach>
                 </ul>
             </div>
-
-
-
-
 
             </td>
         </tr>
