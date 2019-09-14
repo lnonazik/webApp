@@ -13,66 +13,82 @@
     <title>Muzik Repository</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
+    <link href="css/index_style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
-
-<div align="center">
-    <nav class="three">
-        <ul>
-            <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
-            <li><a href="/upload">Repository</a></li>
-            <li><a href="/contacts">Contact</a></li>
-            <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
-        </ul>
-    </nav>
-
-   <!-- <h1>Welcome back, !${user.username}</h1>-->
-    <h1><p class="pp"> Welcome dear friend!</p></h1>
-
-
-
-    <form method="post" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type="submit" value="Upload" />
-        <br>
-    </form>
-
-    <div>
-        <ul>
-            <c:forEach items="${files}" var="file">
-                <li><a href="${file}">${file}</a></li>
-            </c:forEach>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <c:forEach items="${trackList}" var="tr">
-            <li>
-                <div>
-                    <table id="m_text">
-                        <tr>
-                            <td><p>${tr.name}</p></td>
-                        </tr>
-                    </table>
-                    <!--<p>${tr.name}</p> -->
-                </div>
-                <audio controls>
-                    <source src="${tr.path}" type="audio/ogg; codecs=vorbis">
-                    <source src="${tr.path}" type="audio/mpeg">
-                    <a href="${tr.path}">Скачайте музыку</a>
-                </audio>
-                <div>
-                    <form method="post" action="/delete" />
-                        <input name="track_id" type="hidden" value="${tr.id}"/>
-                        <input type="submit" value="Delete" />
-                    </form>
-                </div>
-            </li>
-            </c:forEach>
-        </ul>
-    </div>
-</div>
-
+<center>
+<table class="home_table">
+    <tr>
+        <td valign="top" height="20px">
+            <center>
+                <nav class="three">
+                    <ul>
+                        <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
+                        <li><a href="/upload">Repository</a></li>
+                        <li><a href="/contacts">Contact</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
+                    </ul>
+                </nav>
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" height="20px"><center>
+            <!-- <h1>Welcome back, !${user.username}</h1>-->
+            <h1><p class="pp"> Welcome dear friend!</p></h1>
+            <form method="post" action="/upload" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <input type="submit" value="Upload" />
+                <br>
+            </form>
+            <hr>
+        </center>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"><center>
+        <div>
+            <ul>
+                <c:forEach items="${files}" var="file">
+                    <li><a href="${file}">${file}</a></li>
+                </c:forEach>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <c:forEach items="${trackList}" var="tr">
+                <li>
+                    <div >
+                        <table id="m_text">
+                            <tr>
+                                <td><center>
+                                    <p>${tr.name}</p>
+                                </center></td>
+                             </tr>
+                         </table>
+                        <!--<p>${tr.name}</p> -->
+                     </div>
+                    <audio controls>
+                        <source src="${tr.path}" type="audio/ogg; codecs=vorbis">
+                        <source src="${tr.path}" type="audio/mpeg">
+                        <a href="${tr.path}">Скачайте музыку</a>
+                    </audio>
+                        <div>
+                            <form method="post" action="/delete" />
+                                <input name="track_id" type="hidden" value="${tr.id}"/>
+                                <input type="submit" value="Delete" />
+                            </form>
+                        </div>
+                    </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+        </center>
+        </td>
+    </tr>
+</table>
+</center>
 </body>
 </html>

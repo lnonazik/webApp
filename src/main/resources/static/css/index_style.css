@@ -13,3 +13,9 @@ P{
     font-family: Verdana;
     font-size: 12px;
 }
+
+#upp{
+    border-color: black;
+    border: 0px;
+    border-style: solid;
+}

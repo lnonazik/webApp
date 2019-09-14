@@ -31,14 +31,16 @@
             </td>
         </tr>
         <tr>
-            <td valign="top">
-                <center><h1 class="pp">Welcome</h1></center>
+            <td valign="top" width="30px">
+                <center><p class="pp">Welcome</p></center>
             </td>
         </tr>
         <tr>
-            <td>f13
+            <td valign="top">
 
             <div align="center">
+                <h1>TOP Music</h1>
+                <hr>
                 <ul>
                 <c:forEach items="${allTrackList}" var="tr">
                         <li>
@@ -50,6 +52,7 @@
                                 <source src="${tr.path}" type="audio/mpeg">
                             </audio>
                         </li>
+                    <br>
                 </c:forEach>
                 </ul>
             </div>
