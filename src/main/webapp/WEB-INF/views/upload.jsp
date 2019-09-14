@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Upload</title>
+    <title>Muzik Repository</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
@@ -21,7 +21,6 @@
         <ul>
             <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
             <li><a href="/upload">Repository</a></li>
-            <li><a href="/index">Blog</a></li>
             <li><a href="/contacts">Contact</a></li>
             <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
         </ul>

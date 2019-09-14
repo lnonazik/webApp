@@ -20,7 +20,6 @@
     <ul>
         <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li><a href="/upload">Repository</a></li>
-        <li><a href="/index">Blog</a></li>
         <li><a href="/contacts">Contact</a></li>
         <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
     </ul>
