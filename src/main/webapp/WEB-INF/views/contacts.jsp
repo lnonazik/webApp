@@ -11,6 +11,7 @@
     <title>Contacts</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
+    <link href="css/index_style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
@@ -25,8 +26,20 @@
     </ul>
 </nav>
 </div>
-<h1>
-    Welcome
-</h1>
+<center>
+<table width="400px" height="300px" bgcolor="#f5f5dc">
+    <tr>
+        <td valign="top">
+            <center>
+            <h1><p class="pp">Contacts</p></h1>
+            <p>Name:    Lanchevych Nazar</p>
+            <p>Email:   lnonazik@gmail.com</p>
+            <p>Number:  380688860042</p>
+            </center>
+        </td>
+    </tr>
+</table>
+</center>
+
 </body>
 </html>

@@ -1,0 +1,15 @@
+.home_table{
+    background-color: #f6f6f6;
+    border: 0px;
+    style: solid;
+    border-color: black;
+    width: 790px;
+    height: 700px;
+    text-align: left;
+    vertical-align: text-top;
+    margin: 5px;
+}
+P{
+    font-family: Verdana;
+    font-size: 12px;
+}

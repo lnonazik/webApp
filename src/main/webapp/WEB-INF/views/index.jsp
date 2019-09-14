@@ -6,6 +6,7 @@
     <title>Index</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
+    <link href="css/index_style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 
 </head>
@@ -13,7 +14,7 @@
 
 
 <sec:authorize access="isAuthenticated()">
-    <div align="center">
+   <!-- <div align="center">
     <nav class="three">
         <ul>
             <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
@@ -24,7 +25,37 @@
         </ul>
     </nav>
     </div>
-    <center><h1 class="pp">Welcome</h1></center>
+    -->
+    <center>
+    <table class="home_table">
+        <tr>
+            <td valign="top" height="20px">
+                <center>
+                <nav class="three">
+                    <ul>
+                        <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
+                        <li><a href="/upload">Repository</a></li>
+                        <li><a href="/index">Blog</a></li>
+                        <li><a href="/contacts">Contact</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
+                    </ul>
+                </nav>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <center><h1 class="pp">Welcome</h1></center>
+            </td>
+        </tr>
+        <tr>
+            <td>f13
+            </td>
+        </tr>
+    </table>
+    </center>
+
+
 
 </sec:authorize>
 

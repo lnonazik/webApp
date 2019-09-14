@@ -27,6 +27,11 @@
         </ul>
     </nav>
 
+   <!-- <h1>Welcome back, !${user.username}</h1>-->
+    <h1><p class="pp"> Welcome dear friend!</p></h1>
+
+
+
     <form method="post" action="/upload" enctype="multipart/form-data">
         <input type="file" name="file" />
         <input type="submit" value="Upload" />
