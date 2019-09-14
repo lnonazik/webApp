@@ -44,6 +44,7 @@ public class MainController {
         this.total = (Integer.valueOf(total) != 5) ? Integer.valueOf(total) : this.total;
         model.addAttribute("products",
                 productService.findAll(PageRequest.of(Integer.valueOf(page) - 1, this.total, Sort.by(sort))));
+        model.addAttribute("allTrackList", trackService.findAllTracks());
         return "index";
     }
     @GetMapping("/home")

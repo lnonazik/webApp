@@ -14,19 +14,7 @@
 
 
 <sec:authorize access="isAuthenticated()">
-   <!-- <div align="center">
-    <nav class="three">
-        <ul>
-            <li><a href="/index"><i class="fa fa-home fa-fw"></i>Home</a></li>
-            <li><a href="/upload">Repository</a></li>
-            <li><a href="/index">Blog</a></li>
-            <li><a href="/contacts">Contact</a></li>
-            <li><a href="${pageContext.request.contextPath}/logout" >Logout</a></li>
-        </ul>
-    </nav>
-    </div>
-    -->
-    <center>
+       <center>
     <table class="home_table">
         <tr>
             <td valign="top" height="20px">
@@ -49,9 +37,26 @@
         </tr>
         <tr>
             <td>f13
-                <c:forEach items="${files}" var="file">
-                    <li><a href="${file}">${file}</a></li>
+            <div align="center">
+                <ul>
+                <c:forEach items="${allTrackList}" var="tr">
+                        <li>
+                            <div>
+                                <p>${tr.name}</p>
+                            </div>
+                            <audio controls>
+                                <source src="${tr.path}" type="audio/ogg; codecs-vorbis">
+                                <source src="${tr.path}" type="audio/mpeg">
+                            </audio>
+                        </li>
                 </c:forEach>
+                </ul>
+            </div>
+
+
+
+
+
             </td>
         </tr>
     </table>

@@ -20,11 +20,12 @@
 <div align="center">
     <a href="${pageContext.request.contextPath}/registration">Registration</a>
 </div>
+<!--
 <div align="center">
     <a href="${pageContext.request.contextPath}/">Back</a>
 </div>
 
-<!--
+
 <form action="${pageContext.request.contextPath/performLogin}" method="post">
     <span class="error">${message}</span>
     <table id="index_table" align="center">
