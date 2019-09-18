@@ -2,6 +2,7 @@ package com.lnonazik.webproject.controller;
 
 import com.lnonazik.webproject.dto.TrackDTO;
 import com.lnonazik.webproject.model.Track;
+import com.lnonazik.webproject.service.MailService;
 import com.lnonazik.webproject.service.StorageService;
 import com.lnonazik.webproject.service.TrackService;
 import com.lnonazik.webproject.service.UserService;
@@ -28,6 +29,11 @@ public class FileUploadController {
     private UserService userService;
     @Autowired
     private TrackService trackService;
+    @Autowired
+    private MailService mailService;
+
+    private final String MESSAGE = "Hello! Track with name %s added to our site!";
+
 
     @GetMapping("/files")
     public String listUploadedFiles(Model model){
@@ -58,6 +64,9 @@ public class FileUploadController {
         redirectAttributes.addFlashAttribute("message",
                 "Your file "+file.getOriginalFilename()+" successfully uploaded!");
         trackService.saveTrack(track);
+
+        mailService.send("New Song Add", userService.findOne(principal.getName()).get().getEmail(),
+                String.format(MESSAGE, track.getName()));
         return "redirect:/upload";
     }
 

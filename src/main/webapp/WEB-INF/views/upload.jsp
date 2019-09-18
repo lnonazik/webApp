@@ -20,7 +20,7 @@
 <center>
 <table class="home_table">
     <tr>
-        <td valign="top" height="20px">
+        <td valign="top" height="20px" bgcolor="#f5f5dc">
             <center>
                 <nav class="three">
                     <ul>
@@ -34,14 +34,16 @@
         </td>
     </tr>
     <tr>
-        <td valign="top" height="20px"><center>
+        <td valign="top" height="20px" bgcolor="#f5f5dc"><center>
             <!-- <h1>Welcome back, !${user.username}</h1>-->
-            <h1><p class="pp"> Welcome dear friend!</p></h1>
-            <form method="post" action="/upload" enctype="multipart/form-data">
+            <h1><p class="pp"> Upload Tracks!</p></h1>
+            <form method="post" action="/upload" enctype="multipart/form-data" modelAttribute="top">
                 <input type="file" name="file" />
                 <input type="submit" value="Upload" />
                 <br>
             </form>
+            <hr>
+            <p class="pp">My Playlist</p>
             <hr>
         </center>
         </td>
@@ -49,6 +51,7 @@
     <tr>
         <td valign="top"><center>
         <div>
+
             <ul>
                 <c:forEach items="${files}" var="file">
                     <li><a href="${file}">${file}</a></li>
