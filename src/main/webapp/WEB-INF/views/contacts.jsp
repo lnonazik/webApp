@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
 <div align="center">
 <nav class="three">
     <ul>
@@ -39,6 +40,6 @@
     </tr>
 </table>
 </center>
-
+</header>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
 <center><h1 class="pp">Login</h1></center>
 
 <form action="${pageContext.request.contextPath}/performLogin" method="post">
@@ -52,5 +53,6 @@ input type="submit" value="Login">
     </table>
 </form>
 -->
+</header>
 </body>
 </html>

@@ -64,7 +64,7 @@ public class FileUploadController {
         redirectAttributes.addFlashAttribute("message",
                 "Your file "+file.getOriginalFilename()+" successfully uploaded!");
         trackService.saveTrack(track);
-
+        //Mail_Controller )
         mailService.send("New Song Add", userService.findOne(principal.getName()).get().getEmail(),
                 String.format(MESSAGE, track.getName()));
         return "redirect:/upload";

@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
 <center>
 <h1 class="pp">Registration Form</h1>
 <form:form modelAttribute="userDTO" action="/register" method="post" enctype="utf8">
@@ -67,5 +68,6 @@
     <a href="${pageContext.request.contextPath}/">Back</a>
 </div>
 </center>
+</header>
 </body>
 </html>

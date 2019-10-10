@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
+
 <div align="center">
 <h1>Welcome back, ${username}!</h1>
 <a href="${pageContext.request.contextPath}/index">Back to index</a>
@@ -18,5 +20,6 @@
 
 <a href="/upload">Upload</a>
 </div>
+</header>
 </body>
 </html>

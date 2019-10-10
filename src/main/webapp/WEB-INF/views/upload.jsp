@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
 <center>
 <table class="home_table">
     <tr>
@@ -93,5 +94,6 @@
     </tr>
 </table>
 </center>
+</header>
 </body>
 </html>

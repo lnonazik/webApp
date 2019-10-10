@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
+
 <h1> ADD Tracks </h1>
 
 <form action="/addTrack" method="post">
@@ -21,6 +23,6 @@
 </form>
 
 
-
+</header>
 </body>
 </html>

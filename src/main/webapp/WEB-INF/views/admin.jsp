@@ -14,9 +14,11 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
 </head>
 <body>
+<header>
 <sec:authorize access='hasRole("ROLE_ADMIN")'>
     <h2>Welcome, ${username}</h2>
     <a href="${pageContext.request.contextPath}/">Back</a>
 </sec:authorize>
+</header>
 </body>
 </html>

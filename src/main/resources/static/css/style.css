@@ -1,6 +1,26 @@
-body{
-    background-image: url("/img/bg.png")
+header {
+    height: 100vh;
+    background: url('../img/background.jpg') no-repeat;
+    background-size: cover;
 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+header:before {
+
+    background: rgba(26,42,120, 0.5);
+}
+
+.center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
 }
 
 A{
