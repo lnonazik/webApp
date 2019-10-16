@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Muzik Repository</title>
+    <title>My Playlist</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <link href="css/index_style.css" rel="stylesheet">

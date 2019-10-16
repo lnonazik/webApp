@@ -41,5 +41,6 @@
 </table>
 </center>
 </header>
+<script src="js/textScript.js"></script>
 </body>
 </html>
